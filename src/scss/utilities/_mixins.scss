@@ -1,0 +1,107 @@
+// BEM MIXINS [BLOCK ELEMENT MODIFIER]
+
+@mixin e($element) {
+	&__#{$element} {
+		@content;
+	}
+}
+
+@mixin m($modifier) {
+	&--#{$modifier} {
+		@content;
+	}
+}
+
+// Background color
+
+@mixin bg-colors($map) {
+	@each $theme, $color in $map {
+		&--#{$theme} {
+			background-color: $color;
+		}
+	}
+}
+
+// Roundy 
+
+@mixin roundy($width, $height, $border: $br-round) {
+	width: $width;
+	height: $height;
+	border-radius: $border
+}
+
+@mixin bg-image($path: null, $bg-position: null, $bg-repeat: null, $bg-size: null) {
+	background-image: $path;
+	background-repeat: $bg-repeat;
+	background-position: $bg-position;
+	background-size: $bg-size;
+	@content;
+}
+
+// ===============================================================
+//                PSEUDO ELEMENT MIXINS
+// ===============================================================
+
+@mixin p-el($el, $el-width, $el-height) {
+    @if $el=="before"or $el=="after" {
+        &:#{$el} {
+            @extend %pseudos;
+            width: $el-width;
+            height: $el-height;
+            @content;
+        }
+    }
+    @else {
+        @warn "`#{$el}` is not a valid pseudo-element.";
+    }
+}
+
+// ===============================================================
+//                FONT AWESOME
+// ===============================================================
+
+@mixin icons($el, $el-width, $el-height) {
+    @if $el=="before"or $el=="after" {
+        &:#{$el} {
+			font-family: 'FontAwesome';
+            width: $el-width;
+            height: $el-height;
+			position: absolute;
+            @content;
+        }
+    }
+    @else {
+        @warn "`#{$el}` is not a valid pseudo-element.";
+    }
+}
+
+// Flexy 
+
+@mixin flexy($disp: flex, $just: null, $wrap: null, $align: null, $dir: null) {
+	display: $disp;
+	flex-direction: $dir;
+	flex-wrap: $wrap;
+	justify-content: $just;
+	align-items: $align;
+}
+
+// Media Query
+
+@mixin mq($break) {
+	$value: map-get($breakpoints, $break);
+	$sm: map-get($breakpoints, 'sm');
+
+	@if $value == null {
+		@error "`#{$break}` is not a valid break point";
+	}
+	@else if $value < $sm {
+		@media(max-width: $value) {
+			@content;
+		}
+	}
+	@else {
+		@media(min-width: $value) {
+			@content;
+		}
+	}
+}

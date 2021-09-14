@@ -1,0 +1,127 @@
+// =================================================================================
+// SERVICES DETAILS
+// =================================================================================
+
+#srv {
+    @extend %top-50;
+    @extend %bottom-80;
+}
+
+.srv {
+    .srvlink {
+        @include mq('xl') {
+            padding: 0 25px;
+        }
+        a {
+            display: block;
+            font-size: em(15px);
+            font-weight: $font-weight--md;
+            background-color: $bg-color;
+            color: color(primary);
+            padding: 12px 15px;
+            margin: 6px;
+            @include mq('md') {
+                border-right: 3px solid $color--seconary;
+            }
+            @include mq('lg') {
+                font-size: em(18px);
+            }
+        }
+        a.is-active {
+            background-color: $color--seconary;
+            color: $white;
+        }
+    }
+    .srvcontent {
+        .acc_panel {
+            display: none;
+        }
+        .acc_panel.is-active {
+            display: block;
+        }
+    }
+
+    .srvcontent {
+        table {
+            margin-top: 15px;
+            width: 100%;
+            border-collapse: collapse;
+            th {
+                text-align: left;
+                font-size: em(13px);
+            }
+            td {
+                font-size: em(14px);
+            }
+            th, td {
+                border: 1px solid color(grey, x-light);
+                padding: 6px 12px;
+            }
+        }
+        .acc__content {
+            ul {
+                li.not-bullet {
+                    &:before {
+                        width: 0;
+                    }
+                }
+            }
+        }
+    }
+    @include e('form') {
+        padding-left: 20px;
+        .align-center {
+            align-items: center;
+        }
+        h2 {
+            font-size: em(18px);
+            font-weight: $font-weight--xl;
+            strong {
+                display: inline-block;
+                padding-left: 2px;
+                position: relative;
+                font-size: 23px;
+                font-weight: $font-weight--sm;
+                @include p-el('after', 84px, 8px) {
+                    top: 20px;
+                    background-color: lighten($color: $color--seconary, $amount: 15%);
+                    z-index: -1;
+                }
+            }
+        }
+
+        p {
+            margin-top: 20px;
+        }
+       form {
+        .btn {
+            margin-top: 8px;
+        }
+       }
+       @include m('registration') {
+            background: $bg-color;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: $br-radius;
+       }
+    }
+}
+
+.srv-contact {
+    @extend %bottom-80;
+    border-radius: 4px;
+    text-align: center;
+    padding: 40px 0;
+    background-image: url('../../images/srv-contact.png');
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100%;
+    .btn {
+        @include mq('xs') {
+            font-size: em(12px);
+            line-height: (23px/14px);
+            font-weight: $font-weight--sm;
+            padding: 3px 15px;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+// ==========================================================
+//  DOWNLOAD 
+// ==========================================================
+
+#download  {
+    @extend %top-80;
+    @extend %bottom-80;
+}
+
+.download {
+    width: 98%;
+    margin: 0 auto;
+    @include mq('lg') {
+        width: 75%;
+    }
+
+    &-items {
+        border: 1px dashed color(primary);
+        padding: 12px;
+        margin-bottom: 24px;
+        &:nth-child(even) {
+            background-color: color(primary, x-light);
+        }
+        p {
+            color: $color--primary;
+        }
+        a {
+            color: $color--seconary;
+            font-weight: $font-weight--sm;
+            margin: 20px 0px;
+            display: block;
+            @include mq('lg') {
+                padding: 0 12px;
+                text-align: center;
+                margin: 0px;
+            }
+            font-size: em(14px);
+            i {
+                margin-left: 7px;
+            }
+        }
+    }
+}

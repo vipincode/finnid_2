@@ -1,0 +1,26 @@
+// ================================================================
+// QUOTES
+// ===============================================================
+
+.quotes {
+    padding: 20px;
+    background-color: rgba($color--primary, 0.03); 
+    border-radius: $br-radius;
+    border-left: 5px solid color(primary);
+    span {
+        display: block;
+        font-size: em(18px);
+        font-weight: $font-weight--sm;
+        font-style: italic;
+        letter-spacing: $letter-space;
+        position: relative;
+        @include p-el($el: 'after', $el-width: 12px, $el-height: 12px) {
+            content: '\f10e';
+            font-family: $font-icons;
+            bottom: 0;
+            right: 30px;
+            font-size: em(34px);
+            color: color(primary);
+        }
+    }       
+}

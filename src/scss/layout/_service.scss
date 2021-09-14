@@ -1,0 +1,27 @@
+// ==========================================================================
+//  SERVICES
+// ==========================================================================
+
+.card-article {
+    a {
+        display: inline-block;
+        font-size: em(13px);
+        font-weight: $font-weight--md;
+        text-transform: uppercase;
+        margin-top: 20px;
+        transition: color $transition ease-in;
+        &:hover {
+            color: $color--seconary;
+        }
+    }
+}
+
+.article {
+    display: block;
+    overflow: hidden;
+
+    .btn {
+        color: $white;
+        border: none;
+    }
+}

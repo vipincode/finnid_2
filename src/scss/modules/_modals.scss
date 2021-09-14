@@ -1,0 +1,21 @@
+// ==========================================================================
+// MODALS
+// ===========================================================================
+
+.modal-header {
+    background: color(primary);
+    color: $white;
+}
+
+.modal-title {
+    font-size: em(20px);
+    font-weight: $font-weight--md;
+}
+
+.modal-header .btn-close {
+    background-color: transparent;
+    color: $white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

@@ -1,0 +1,395 @@
+// ==========================================================================
+//               HOME [SERVICE]
+// ==========================================================================
+
+#service {
+    @extend %top-110;
+    @extend %bottom-110;
+}
+
+.service {
+    @extend %center;
+    .heading {
+        @extend %bar-center;
+        .sec-heading {
+            &:after {
+                top: 145px;
+                @include mq('md') {
+                    top: 108px
+                }
+                @include mq('xll') {
+                    top: 74px
+                }
+            }
+        }
+    }
+    
+    &-content {
+        @extend %top-50;
+    }
+    &-card {
+        background-color: $white;
+        padding: 20px;
+        border-radius: $br-radius;
+        box-shadow: 0 0 10px rgba($black, 0.07);
+        @extend %transition;
+        h3 {
+            font-size: em(17px);
+            line-height: (25px/17px);
+            margin-bottom: em(5px, 17px);
+            font-weight: $font-weight--lg;
+        }
+        p {
+            font-size: em(15px);
+        }
+        a {
+            display: inline-block;
+            color: $color--seconary;
+            font-size: em(13px);
+            line-height: (22px/13px);
+            font-weight: $font-weight--lg;
+            padding: 1px 4px;
+            margin-top: 8px;
+        }
+    }
+}
+
+
+// ==========================================================================
+//               HOME [FEATURE]
+// ==========================================================================
+
+#features {
+    padding: 50px 0px;
+    background-color: $bg-color;
+    margin-bottom: 0;
+}
+.features {
+    .heading {
+        @extend %center;
+        @extend %bar-center;
+        .sec-heading {
+            &::after {
+                top: 140px;
+                @include mq('md') {
+                    top: 105px;
+                }
+            }
+        }
+    }
+    &-content {
+        @extend %top-50;
+    }
+    .card-main {
+        @include flexy();
+    }
+    &-card {
+        background-color: $white;
+        padding: 20px;
+        border-radius: $br-radius;
+        @include flexy($dir: column);
+        flex: 1;
+        @extend %center;
+        img {
+            align-self: center;
+            margin-bottom: em(10px);
+        }
+        h3 {
+            font-size: em(18px);
+            font-weight: $font-weight--md;
+            margin-bottom: em(15px, 18px);
+        }
+        @extend %transition;
+    }
+}
+
+// ==========================================================================
+//               HOME [WHSY US]
+// ==========================================================================
+
+#whyus {
+    background-image: url('../../images/whyus.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.whyus {
+    position: relative;
+    padding-bottom: 30px;
+    @include mq('xxl') {
+        padding: 80px 0px;
+    }
+    @include mq('xll') {
+        padding: 100px 0px;
+    }
+    &-heading {
+        @extend %top;
+        p {
+            font-size: em(17px);
+            font-weight: $font-weight--sm;
+            line-height: em(35px, 17px);
+            margin-bottom: 20px;
+            margin-top: 28px;
+        }
+    }
+    &-content {
+        h2 {
+           @include mq('xs') {
+               font-size: em(21px);
+           }
+        }
+        p {
+            margin-top: 15px;
+            font-size: em(16px);
+            line-height: (28px/16px);
+        }
+        ul {
+            margin-top: 15px;
+            padding-left: 30px;
+            li {
+                position: relative;
+               
+                @include p-el('before', 18px, 18px) {
+                    content: url('../../images/checked.png');
+                    left: -26px;
+                    top: 4px;
+                }
+            }
+        }
+    }
+}
+
+// ==========================================================================
+//               HOME [FEATURE]
+// ==========================================================================
+
+#why-feature {
+    padding: 80px 0px 80px;
+    .heading {
+        width: 100%;
+        margin-bottom: 65px;
+    }
+}
+
+.why-feature {
+    &--card {
+        background-color: $white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba($black, 0.07);
+        @extend %center;
+        h3 {
+            font-size: em(19px);
+            line-height: (25px/19px);
+            margin-bottom: em(9px, 19px);
+            font-weight: $font-weight--lg;
+        }
+        @extend %transition;
+    }
+}
+
+// ==========================================================================
+//               HOME [MODULE]
+// ==========================================================================
+
+#module {
+    background-color: $bg-color;
+    padding: 50px 0px 50px
+}
+
+.module {
+    .heading {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    &--bg {
+        img {
+            margin-top: 100px;
+        }
+    }
+    &-card {
+        background-color: $white;
+        padding: 25px;
+        @extend %center;
+        @include flexy($dir: column);
+        flex: 1;
+        &--main {
+            @include flexy();
+        }
+
+        h3 {
+            font-size: em(18px);
+        }
+        @extend %transition;
+    }
+}
+
+// ==========================================================================
+//               HOME [INTERFACE]
+// ==========================================================================
+
+#interface {
+    padding: 50px 0px 50px;
+}
+
+.interface {
+    .heading {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    &-card {
+        background-color: $white;
+        padding: 25px;
+        box-shadow: 0 0 10px rgba($black, 0.06);
+        @extend %center;
+        h3 {
+            font-size: em(18px);
+        }
+        @extend %transition;
+    }
+}
+
+
+
+// ==========================================================================
+//               HOME [TESTMONIALS]
+// ==========================================================================
+
+#testimonial {
+    background-color: $bg-color;
+    padding: 100px 0px;
+    overflow: hidden;
+}
+
+.testimonial {
+    .heading {
+        text-align: center;
+        @extend %bar-center;
+        p {
+            margin-bottom: 30px;
+        }
+    }
+
+    &-card {
+        @extend %center;
+        width: 96%;
+        margin: 0 auto;
+        @include mq('lg') {
+            width: 50%;
+        }
+
+        img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: $br-roundy;
+            padding: 3px;
+            border: 2px solid color(primary);
+        }
+
+        h4 {
+            font-size: em(17px);
+            font-weight: $font-weight--md;
+        }
+
+        small {
+            font-size: em(13px);
+        }
+
+        p {
+            margin-top: 30px;
+            position: relative;
+            @include p-el($el-width: 12px, $el-height: 12px, $el: 'after') {
+                content: '\f10e';
+                font-family: $font-icons;
+                bottom: 0;
+                right: 40px;
+                font-size: em(35px);
+                color: $color--primary;
+            }
+            @include p-el($el-width: 12px, $el-height: 12px, $el: 'before') {
+                content: '\f10d';
+                font-family: $font-icons;
+                top: -38px;
+                left: 0px;
+                font-size: em(35px);
+                color: $color--primary;
+            }
+        }
+    }
+}
+
+// ==========================================================================
+//               HOME [BOOK DEMO]
+// ==========================================================================
+
+#demo {
+    @extend %top-110;
+    @extend %bottom-80;
+    @extend %center;
+    .btn {
+       @extend %top-30;
+    }
+    .sec-heading {
+        text-align: left;
+    }
+    article {
+        text-align: left;
+        ul {
+            @extend %top-50;
+            li {
+                position: relative;
+                padding: 5px 0px;
+                padding-left: 32px;
+                font-size: em(18px);
+                background: $white;
+                box-shadow: 0 0 7px rgba($color--seconary, 0.28);
+                margin: 10px 0px;
+                border-radius: $br-radius;
+                @include icons($el: 'before', $el-width: 32px, $el-height: 32px) {
+                    content: '\f00c';
+                    left: 6px;
+                    color: $green;
+                }
+            }
+        }
+    }
+}
+
+// ==========================================================================
+//               HOME [COUNTER]
+// ==========================================================================
+
+#members {
+    background-color: $bg-color;
+    padding: 110px 0px;
+}
+
+
+// ==========================================================================
+//               HOME [LATEST NEWS]
+// ==========================================================================
+
+#news {
+    @extend %top-80;
+    @extend %bottom-80;
+}
+
+.news {
+    &-heading {
+        @extend %bottom-80;
+        .sec-heading {
+            &::after {
+                @include mq('xs') {
+                    top: 105px;
+                }
+            }
+        }
+    }
+
+    &-list {
+        text-align: center;
+        margin: 30px 0px 80px;
+    }
+}
+

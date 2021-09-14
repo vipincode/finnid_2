@@ -1,0 +1,156 @@
+// ==========================================================================
+//               FOOTER
+// ==========================================================================
+
+#footer {
+  padding: 50px 0px 15px;
+  background-color: $black;
+  color: $white;
+  @include bg-image(
+    $path: url('#{$img--path}/overlay-pattern.png'),
+    $bg-repeat: repeat,
+    $bg-size: 6px
+  );
+}
+
+.footer {
+  color: $white;
+  h3 {
+    margin-bottom: 15px;
+    @include mq('xs') {
+      margin-top: 24px;
+    }
+    position: relative;
+    @include p-el($el: 'after', $el-width: 20px, $el-height: 2px) {
+      background-color: $color--seconary;
+      top: 34px;
+      left: 0;
+      transition: width $transition ease-in-out;
+    }
+
+    &:hover:after {
+      width: 60px;
+    }
+  }
+  a {
+    display: block;
+    font-size: em(14px);
+    line-height: em(25px, 14px);
+    font-weight: $font-weight--sm;
+    color: $white;
+    padding: 3px 0px;
+    transition: color $transition ease-in;
+    &:hover {
+      color: color(primary, x-light);
+    }
+  }
+  .btn--newsletter {
+    border: none;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+    background-color: $color--seconary;
+    color: $white;
+    margin: 10px 0px;
+    padding: 7px 15px;
+    font-size: em(14px);
+    font-weight: $font-weight--md;
+    line-height: em(26px, 14px);
+    border-radius: 30px;
+    @include mq('lg') {
+      border-radius: 0;
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+  }
+
+  input[type='email'] {
+    font-size: em(14px);
+    line-height: em(24px, 14px);
+    border-radius: initial;
+    color: color(grey);
+    border-radius: 30px;
+    @include mq('lg') {
+      border-radius: 0;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+    }
+  }
+
+  .socil-icon {
+    margin-top: 30px;
+    ul {
+      li {
+        display: inline-block;
+        margin-right: 20px;
+        margin-bottom: 24px;
+      }
+
+      a {
+        font-size: em(18px);
+        color: $white;
+        display: block;
+        border-radius: $br-roundy;
+        text-align: center;
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .dipti-logo {
+    @extend %top-50;
+    @extend %bottom-50;
+    @extend %center;
+    img {
+      opacity: 0.45;
+      filter: grayscale(1);
+      transition: filter $transition ease-in, opacity $transition ease-in;
+      &:hover {
+        filter: grayscale(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  .finid-policy {
+    ul {
+      width: 100%;
+      @include mq('lg') {
+        width: 70%;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      li {
+        display: inline-block;
+      }
+      a {
+        display: block;
+        padding: 10px 15px;
+        font-size: em(13px);
+        font-weight: $font-weight--xs;
+        color: color(primary, x-light);
+        transition: color $transition ease-in;
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.copyrights {
+  color: $white;
+  padding: 30px 30px 7px;
+  text-align: center;
+  border-top: 1px dotted color(primary, light);
+  p {
+    font-size: em(13px);
+    text-align: center;
+    letter-spacing: $letter-space;
+    font-weight: $font-weight--xs;
+    color: color(primary, x-light)
+  }
+}

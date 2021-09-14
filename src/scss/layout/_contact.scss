@@ -1,0 +1,57 @@
+// ==========================================================================
+//               HOME [CONTACT US]
+// ==========================================================================
+
+#contacts {
+    @extend %top-80;
+    @extend %bottom-80;
+    .heading {
+        @extend %center;
+        @extend %bar-center;
+    }
+}
+
+.contact {
+    @extend %top-50;
+    &-form {
+        background-color: $white;
+        label {
+            font-weight: $font-weight--md;
+        }
+    }
+    &-address {
+        padding: 20px;
+        background: url(../../images/map.png);
+        background-position: -19px 40px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        opacity: 0.85;
+        .ter-heading {
+            span {
+                color: $color--seconary;
+            }
+        }
+
+        .hd-addr {
+            margin-top: 20px; 
+        }
+        .weblinks {
+            color: $color--primary;
+            display: block;
+            line-height: 30px;
+        }
+        ul {
+            li {
+                display: block;
+                padding: 4px 0px;
+            }
+            a {
+                color: $black;
+                transition: color $transition ease-out;
+                &:hover {
+                    color: $color--primary;
+                }
+            }
+        }
+    }
+}

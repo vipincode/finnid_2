@@ -1,0 +1,85 @@
+// ===========================================================================================
+//               COMMMON RULE
+// ===========================================================================================
+
+%prev-next {
+    color: color(primary);
+    background-color: $white;
+    padding: 26px 20px;
+    border-radius: $br-radius;
+}
+%swiper-position {
+    position: relative;
+}
+.swiper-pagination-bullet {
+    background-color: $color--primary;
+}
+.swiper-button-prev {
+    @extend %prev-next;
+    box-shadow: 6px 0px 10px rgba(color(primary),0.17);
+}
+.swiper-button-next {
+    @extend %prev-next;
+    box-shadow: -6px 0px 10px rgba(color(primary),0.12);
+}
+.swiper-button-prev:after, 
+.swiper-button-next:after {
+    font-size: em(28px);
+}
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+   @include mq('xll') {
+    left: 70px;
+   }
+}
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+    @include mq('xll') {
+        right: 70px;
+    }
+}
+
+// ===========================================================================================
+//               SPECIFIC RULE [SECTIONS]
+// ===========================================================================================
+
+.service {
+    &-content {
+       @extend %swiper-position;
+        .swiper2 {
+            position: initial;
+            padding: 20px 0px;
+            .swiper-pagination {
+                bottom: -16px;
+            }
+            // .swiper-slide {
+            //     height: auto;
+            //     @include flexy($wrap: wrap);
+            // }
+        }
+    }
+}
+
+.why-feature {
+    @extend %swiper-position;
+    margin-top: -20px;
+    .swiper3 {
+        position: initial;
+        padding: 20px 0px;
+        .swiper-pagination {
+            bottom: -30px;
+        }
+    }
+}
+
+.testimonial {
+    @extend %swiper-position;
+    .swiper1 {
+        position: initial;
+        overflow: initial;
+        .swiper-pagination {
+            bottom: -74px;
+           @include mq('md') {
+             bottom: -50px;
+           }
+        }
+    }
+}

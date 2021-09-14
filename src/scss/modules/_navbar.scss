@@ -1,0 +1,127 @@
+// ============================================================================
+//                 NAVBAR [MAIN]
+// ============================================================================
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    padding-top: 10px;
+    @include mq('md') {
+        padding-top: 1px;
+    }
+}
+
+.navbar {
+    &-logo {
+       img  {
+        @include mq('lg') {
+            margin-top: 5px;
+        }
+       }
+    }
+
+    &-main {
+        @include mq('lg') {
+            @include flexy($wrap: wrap, $just: space-between, $align: center);
+        }
+
+        ul {
+            display: none;
+            @include mq('lg') {
+                display: block;
+            }
+            li {
+                display: inline-block;
+            }
+            a {
+                display: inline-block;
+                padding: 13px 15px;
+                font-size: em(17px);
+                line-height: em(45px, 17px);
+                font-weight: $font-weight--sm;
+                color: color(grey, dark);
+                transition: color 0.3s ease;
+            }
+        }
+    }
+
+    &-sub {
+        position: relative;
+        @include p-el($el: 'before', $el-width: auto, $el-height: auto) {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-top: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-left: 12px solid transparent;
+            border-bottom: 12px solid color(primary);
+            display: none;
+            z-index: 3;
+        }
+        &:hover::before {
+            display: block;
+        }
+        @include icons($el: 'after', $el-width: 10px, $el-height: 10px) {
+            content: '\f107';
+            top: 23px;
+            right: 0px;
+            font-size: em(19px);
+            color: color(primary);
+        }
+        &:hover::after {
+            content: '\f106';
+        }
+        &__items {
+            background: color(primary);
+            width: 340px;
+            padding: 15px;
+            border-radius: 10px;
+            position: absolute;
+            left: 50%;
+            top: 71px;
+            transform: translateX(-50%);
+            z-index: 99;
+            display: none;
+            ul {
+                li {
+                    display: block;
+                    border-bottom: 1px dotted color(primary, x-light);
+                    &:last-child {
+                        border: none;
+                    }
+                    a {
+                        display: block;
+                        font-size: em(15px);
+                        line-height: em(19px, 15px);
+                        color: $white;
+                    }
+                }
+            }
+        }
+        &:hover .navbar-sub__items {
+            display: block;
+        }
+    }
+}
+
+.is-sticky {
+    background-color: $white;
+    border-bottom: 1px solid color(grey, x-light);
+    @include mq('lg') {
+        animation: topToBottom $transition ease-in-out;
+    }
+} 
+
+@keyframes topToBottom {
+    from {
+        transform: translateY(-100px);
+        opacity: 0.35;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}

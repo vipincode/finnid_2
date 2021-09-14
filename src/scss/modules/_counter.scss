@@ -1,0 +1,27 @@
+// ===============================================================================
+// COUNTER RULE
+// ===============================================================================
+
+.counter {
+    text-align: center;
+
+    h1 {
+        font-size: em(42px);
+        line-height: (52px/42px);
+        @include mq('md') {
+            font-size: em(58px);
+            line-height: (72px/58px);
+        }
+    }
+
+    span {
+        color: $color--seconary;
+        font-size: em(32px);
+        line-height: (30px/32px);
+        margin-bottom: 50px;
+        display: block;
+        @include mq('md') {
+            margin-bottom: 0;
+        }
+    }
+}

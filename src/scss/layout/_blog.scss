@@ -1,0 +1,295 @@
+// =============================================================================
+// BLOG
+// ==============================================================================
+
+#blog {
+    padding: 80px 0px;
+    .heading {
+        @extend %center;
+        @extend %bar-center;
+    }
+}
+
+.blog {
+    @include e(content) {
+        @extend %top-50;
+    }
+}
+
+// =============================================================================
+// SINGLE BLOG POST DETAILS
+// ==============================================================================
+
+#post {
+   background-color: color(grey, x-light);
+}
+
+.post {
+    @include e(content) {
+        @extend %top-110;
+        @extend %bottom-80;
+        background-color: $white;
+        border-radius: $br-radius;
+        padding: 25px;
+        h1 {
+            font-size: em(36px);
+            font-weight: $font-weight--lg;
+            line-height: (48px/36px);
+            margin-bottom: em(25px, 36px);
+        }
+        h3 {
+            font-size: em(22px);
+            line-height: (58px/22px);
+            border-bottom: 1px solid color(grey, x-light);
+            margin-bottom: em(12px, 22px);
+            font-weight: $font-weight--lg;
+        }
+
+        @include m('rcpost') {
+            ul {
+                li {
+                    display: block;
+                    a {
+                        display: block;
+                        padding: 7px 4px;
+                        border-bottom: 1px dotted color(grey, x-light);
+                        transition: color $transition ease-in;
+                        &:hover {
+                            color: color(primary, light);
+                        }
+                    }
+                }
+            }
+        }
+        @include m('rccomments') {
+            ul {
+                li {
+                    display: block;
+                    a {
+                        display: block;
+                        padding: 7px 4px;
+                        text-decoration: underline;
+                        border-bottom: 1px dotted color(grey, x-light);
+                        transition: color $transition ease-in;
+                        &:hover {
+                            color: color(primary, light);
+                        }
+                    }
+                }
+            }
+        }
+        @include m('testimonials') {
+            @extend %center;
+            @extend %top-30;
+            .swiper4 {
+                .bsl-card {
+                    width: 70%;
+                    max-width: 250px;
+                    margin: 2em auto;
+                    border-radius: $br-radius;
+                    background-color: $white;
+                    padding: 12px;
+                    h4 {
+                        font-size: em(15px);
+                    }
+                    span {
+                        font-size: em(13px);
+                        display: block;
+                        margin-bottom: em(18px, 13px);
+                    }
+                    p {
+                        font-size: em(14px);
+                        margin-bottom: em(25px, 14px);
+                        position: relative;
+                        @include icons('after', 25px, 25px) {
+                            content: '\f10d';
+                            left: 10px;
+                            top: -18px;
+                            font-size: em(21px);
+                            color: $color--seconary;
+                        }
+                    }
+                }
+                img {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: $br-roundy;
+                    object-fit: cover;
+                    margin: auto;
+                }
+            }
+        }
+        @include m('gallery') {
+            @extend %center;
+            .gl-content {
+                width: 70%;
+                margin: auto;
+                max-width: 300px;
+                padding: 15px;
+            }
+        }
+    }
+
+    @include e(image) {
+        position: relative;
+        img {
+            border-radius: $br-radius;
+        }
+        @include m(date) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: $color--seconary;
+            width: 85px;
+            height: 95px;
+            color: $white;
+            padding: 5px;
+            @extend %center;
+            span {
+                display: block;
+            }
+            h1 {
+                font-size: em(38px);
+                line-height: (38px/42px);
+                font-weight: $font-weight--lg;
+            }
+        }
+    }
+    @include e(readers) {
+        ul {
+            li {
+                display: inline-block;
+                a {
+                    display: block;
+                    padding: 2px 13px;
+                    font-size: em(13px);
+                    font-weight: $font-weight--sm;
+                    position: relative;
+                    @include p-el($el: 'before', $el-width: 8px, $el-height: 8px) {
+                        background-color: $color--seconary;
+                        border-radius: $br-roundy;
+                        left: 0px;
+                        top: 8px;
+                    }
+                }
+            }
+        }
+    }
+    @include e('articles') {
+        @extend %top-30;
+        article {
+            .article_one {
+                &::first-letter {
+                    background-color: $color--seconary;
+                    color: $white;
+                    padding: 5px 12px;
+                    margin-right: 3px;
+                    border-radius: $br-radius;
+                    font-size: em(38px);
+                    font-weight: $font-weight--md;
+                }
+            }
+            blockquote {
+                background-color: $bg-color;
+                border-left: 10px solid color(primary);
+                padding: 10px 40px;
+                border-radius: $br-radius;
+                margin: 50px 0px;
+                p {
+                    font-size: 18px;;
+                }
+                .quote {
+                    font-size: em(38px);
+                }
+            }
+        }
+    }
+    @include e('related') {
+        h3 {
+            @extend %top-30;
+        }
+    }
+}
+
+// =============================================================================
+//  DEFAULT BLOG TAGS
+// ==============================================================================
+
+#tags {
+    li {
+        display: inline-block;
+        margin: 4px;
+        a {
+            display: block;
+            font-size: em(12px);
+            line-height: (19px/12px);
+            background-color: color(primary);
+            color: $white;
+            padding: 3px 5px;
+            border-radius: $br-radius;
+        }
+    }
+}
+
+// =============================================================================
+//  COMMENTS SECTIONS
+// ==============================================================================
+
+.post {
+    @include e('discussion') {
+        h2 {
+            font-size: em(32px);
+            line-height: (62px/32px);
+            font-weight: $font-weight--lg;
+            @extend %top-30;
+        }
+        .cmm {
+            margin-top: 30px;
+            @include e('image') {
+                @extend %center;
+                img {
+                    width: 64px;
+                    height: 64px;
+                    object-fit: cover;
+                    border-radius: $br-roundy;
+                }
+            }
+            @include e('heading') {
+                @include flexy($just: space-between, $align: center);
+                margin-bottom: 5px;
+                h4 {
+                    font-size: em(15px);
+                }
+                span {
+                    font-size: em(13px);
+                    color: $color--seconary;
+                }
+                a {
+                    font-size: em(13px);
+                    font-weight: $font-weight--md;
+                    text-transform: uppercase;
+                    color: $color--seconary;
+                }
+            }
+            @include e('article') {
+                p {
+                    font-size: em(14px);
+                    line-height: (24px/14px);
+                }
+            }
+            @include e('parent') {
+              @extend %top-20;
+              margin-bottom: 20px
+            }
+            @include e('children') {
+                @extend %top-20;
+                margin-left: 100px;
+            }
+            @include e('post') {
+                @extend %top-50;
+            }
+        }
+    }
+}
+
+@import "../../../node_modules/lightbox2/dist/css/lightbox";

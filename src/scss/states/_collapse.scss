@@ -1,0 +1,70 @@
+// =============================================================
+//  MOBILE MENU
+// =============================================================
+
+.navbar {
+    &-main {
+        @include flexy($just: space-between, $align: center);
+    }
+    .hamburger {
+        position: relative;
+        z-index: 999;
+        @include mq('lg') {
+            display: none;
+        }
+    }
+}
+
+.sider {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-color: color(primary, x-light);
+    overflow: auto;
+    display: none;
+    &-content {
+        padding: 25px;
+        ul {
+            @extend %top-20;
+            a {
+                display: block;
+                color: color(primary);
+                padding: 10px 0px;
+                font-weight: $font-weight--md;
+            }
+        }
+    }
+    @include e(sub) {
+        position: relative;
+        @include icons($el: 'after', $el-width: 20px, $el-height: 20px) {
+            content: '\f107';
+            right: 10px;
+            top: 6px;
+            font-size: em(20px);
+        }
+    }
+    @include e(links) {
+        margin-top: 0!important;
+        padding-left: 10px;
+        display: none;
+        li {
+            a {
+                font-weight: $font-weight--xs;
+            }
+        }
+    }
+}
+
+.js__toggle {
+    display: block;
+}
+
+// ==============================================================================
+//  HAMBURGER TOGGLE
+// ==============================================================================
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {height: 3px;}

@@ -1,0 +1,48 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: $font-stack--primary;
+	font-size: $base-font--size;
+	line-height: $base--line/$base-font--size;
+	font-weight: $font-weight--xs;
+	color: $black;
+}
+
+
+h1,h2,h3,h4,h5,h6 { 
+	margin: 0;
+}
+
+p {
+	font-weight: $font-weight--xs;
+	margin: 0;
+	line-height: 30px;
+}
+
+a {
+	text-decoration: none;
+	color: $black;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	li {
+		line-height: 30px;
+	}
+}
+
+img {
+	max-width: 100%;
+	image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+

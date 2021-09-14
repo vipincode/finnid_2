@@ -1,0 +1,125 @@
+// =============================================================================
+// PRICING PAGE[RULE]
+// =============================================================================
+
+#pricing {
+    padding: 50px 20px 30px;
+    background-color:lighten( color(grey, x-light), 2% );
+}
+
+.pricing {
+    .heading {
+        @extend %center;
+        @extend %bar-center;
+        .sec-heading {
+            &:after {
+                top: 100px;
+                @include mq('sm') {
+                    top: 60px;
+                }
+            }
+        }
+    }
+    &-content {
+        @extend %top-30;
+    }
+    &-card {
+        @include mq(xs) {
+            margin-bottom: 24px;
+            border-radius: $br-radius;
+        }
+        background-color: $white;
+        box-shadow: 0 0 10px rgba($black, 0.05);
+        @extend %center;
+        height: 100%;
+        &--content {
+            padding: 20px;
+            h3 {
+                font-size: em(17px);
+                font-weight: $font-weight--md;
+                text-transform: uppercase;
+                color: color(grey, light);
+            }
+            ul {
+                li {
+                    display: block;
+                    padding: 8px 10px;
+                    font-size: em(15px);
+                    border-bottom: 1px solid color(grey, x-light);
+                    font-weight: $font-weight--sm;
+                    &:first-child {
+                        font-weight: $font-weight--md;
+                        color: color(primary, light);
+                    }
+                }
+            }
+            h2 {
+                font-size: em(32px);
+                font-weight: $font-weight--lg;
+                margin: 20px 0px;
+                line-height: (42px/32px);
+                color: color(primary, light);
+            }
+            .btn {
+                padding: 3px 30px;
+            }
+        }
+    }
+}
+
+// ============================================================================
+//  CALLUS
+// ============================================================================
+#callus {
+    padding: 50px 20px 80px;
+    background-color:lighten( color(grey, x-light), 2% );
+}
+.callus {
+    @extend %top-80;
+    @extend %bottom-80;
+    text-align: center;
+    h3 {
+        font-size: em(32px);
+        font-weight: $font-weight--lg;
+        letter-spacing: $letter-space * 3;
+        @include mq('md') {
+            font-size: em(42px);
+        }
+        @include mq('lg') {
+            font-size: em(62px);
+            line-height: (62px/62px);
+        }
+    }
+    h4 {
+        font-size: em(25px);
+        font-weight: $font-weight--md;
+        line-height: (30px/25px);
+        margin-bottom: em(12px, 25px);
+    }
+}
+
+.mt-120 {
+    margin-top: 120px;
+}
+
+.tbs__panel--buttons {
+    width: 280px;
+    margin: auto;
+}
+
+.inner_tab.inn-active {
+    background-color: $color--seconary!important;
+}
+
+.check-tick {
+    color: $green;
+}
+
+.close-tick {
+    color: $red;
+}
+
+.ft-price {
+    font-weight: $font-weight--xl;
+    color: $color--seconary!important;
+}

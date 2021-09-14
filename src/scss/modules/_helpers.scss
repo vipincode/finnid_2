@@ -1,0 +1,118 @@
+// ==========================================================
+//         USEFULL HELPERS 
+// ==========================================================
+
+%center {
+    text-align: center;
+}
+
+%position-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+%bar-center {
+    .sec-heading {
+        &::after {
+            left: 50%;
+            transform: translateX(-50%)
+        }
+    }
+}
+
+.border-none {
+    border: none;
+}
+
+%small-text__14 {
+    font-size: em(14px);
+}
+
+%small-text__18 {
+    font-size: em(18px);
+}
+
+// ==========================================================
+// DOTS [Bullets]
+// ==========================================================
+
+%solid {
+    font-size: em(15px);
+    position: relative;
+    padding-left: em(12px, 15px);
+    margin: em(8px, 15px) 0px;
+    @include p-el('before', 6px, 6px) {
+        border-radius: $br-roundy;
+        background-color: color(primary, light);
+        left: 0;
+        top: 8px;
+    }
+}
+
+%border {
+    font-size: em(15px);
+    position: relative;
+    padding-left: em(12px, 15px);
+    margin: em(8px, 15px) 0px;
+    @include p-el('before', 5px, 5px) {
+        border-radius: $br-roundy;
+        background-color: transparent;
+        border: 1px solid color(primary, light);
+        left: 0;
+        top: 8px;
+    }
+}
+
+// ==========================================================
+//        TOP
+// ==========================================================
+
+%top {
+    position: relative;
+    z-index: 2;
+}
+
+%top-20 {
+    margin-top: 20px;
+}
+
+%top-30 {
+    margin-top: 30px;
+}
+
+%top-50 {
+    margin-top: 50px;
+}
+
+%top-80 {
+    margin-top: 80px;
+}
+
+%top-110 {
+    margin-top: 110px;
+}
+
+// ==========================================================
+//        BOTTOM
+// ==========================================================
+
+%bottom-50 {
+    margin-bottom: 50px;
+}
+
+%bottom-80 {
+    margin-bottom: 80px;
+}
+
+%bottom-110 {
+    margin-bottom: 110px;
+}
+
+%transition {
+    transition: transform $transition ease-in-out;
+    &:hover {
+        transform: translateY(-15px);
+    }
+}

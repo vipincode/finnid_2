@@ -1,0 +1,23 @@
+// ===========================================================
+// FAQs
+// ===========================================================
+
+#faqs {
+    @extend %top-80;
+    @extend %bottom-80;
+}
+
+.faqs {
+    .heading {
+        @extend %center;
+        @extend %bar-center;
+    } 
+    &-content {
+        @extend %top-50;
+        @include mq('lg') {
+            width: 70%;
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+    }
+}

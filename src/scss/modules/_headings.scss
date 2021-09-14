@@ -1,0 +1,82 @@
+// ================================================
+//           HEADINGS
+// ================================================
+.heading {
+    width: 95%;
+    margin: 0 auto;
+    @include mq('lg') {
+        width: 60%;
+    }
+    p {
+        font-size: em(17px);
+        font-weight: $font-weight--sm;
+        line-height: em(35px, 17px);
+        @extend %top-50;
+    }
+}
+
+.lg-heading {
+    font-size: em(32px);
+    font-weight: $font-weight--xl;
+    line-height: em(36px, 32px);
+    margin-bottom: em(15px, 32px);
+    span {
+        font-weight: $font-weight--xs;
+        color: $color--primary;
+    }
+    @include mq('md') {
+        font-size: em(48px);
+        margin-bottom: em(18px, 48px);
+    }
+    @include mq('lg') {
+        font-size: em(52px);
+        margin-bottom: em(18px, 42px);
+    }
+}
+
+.sm-heading {
+    font-size: em(24px);
+    font-weight: $font-weight--lg;
+    line-height: em(28px, 24px);
+    letter-spacing: $letter-space;
+    color: $color--seconary;
+}
+
+.prim-heading {
+    color: $color--primary;
+    font-size: em(32px);
+    font-weight: $font-weight--lg;
+    @include mq('lg') {
+        font-size: em(42px);
+        line-height: em(55px, 42px);
+    }
+}
+
+.sec-heading {
+    position: relative;
+    font-size: em(28px);
+    font-weight: $font-weight--lg;
+    @include p-el($el: 'after', $el-width: 70px, $el-height: 3px) {
+        background-color: $color--seconary;
+        top: 60px;
+        left: 0;
+    }
+    @include mq('lg') {
+        font-size: em(34px);
+        line-height: em(42px, 34px);
+    }
+}
+
+.ter-heading {
+    font-size: em(18px);
+    font-weight: $font-weight--md;
+    margin-bottom: em(15px, 18px);
+}
+
+.text-accent {
+    font-size: em(17px);
+    @include mq('md') {
+        font-size: em(20px);
+    }
+}
+

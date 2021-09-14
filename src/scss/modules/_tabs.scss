@@ -1,0 +1,101 @@
+// ==================================================================
+//  TABS
+// ==================================================================
+
+.tbs {
+    @include e('button') {
+        text-align: center;
+        button {
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: em(15px);
+            line-height: (26px/15px);
+            font-weight: $font-weight--md;
+            text-transform: uppercase;
+            background-color: lighten(color(grey, x-light), 2%);
+            color: color(primary, light);
+            padding: 8px 12px;
+            @include mq('md') {
+                padding: 8px 25px;
+            }
+            margin: 5px 12px;
+            @include mq('xs') {
+                display: block;
+                width: 100%;
+                margin: 12px 0px;
+                border: 2px solid color(primary, light);
+            }
+        }
+        .br-active {
+            border: 2px solid color(primary, light);
+            border-bottom: 3px solid transparent;
+            border-radius: $br-radius;
+            @include mq('xs') {
+                border: 2px solid color(primary, light);
+                background-color: color(primary, light);
+                color: $white;
+            }
+        }
+    }
+    @include e('panel') {
+        @include mq('xs') {
+            margin-top: 0px;
+            padding: 0;
+        }
+        margin-top: -8px;
+        padding: 30px;
+        border: 2px solid color(primary, light);
+        border-radius: $br-radius;
+        overflow: hidden;
+        @include m('item') {
+            display: none;
+        }
+        .tbs--active {
+            display: block;
+            animation: tbsEffect $transition ease-in both;
+        }
+    }
+    .inner_tab {
+        background-color: color(primary);
+        color: $white;
+        font-size: em(16px);
+        text-align: center;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 5px 20px;
+        line-height: (28px/16px);
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+    .tbs__panel--inner {
+        display: none;
+    }
+    .tbs-inner--active {
+        display: block;
+    }
+}
+
+@keyframes tbsEffect {
+    0% {
+        opacity: 0;
+        margin-top: 100px;
+        transform: scale(1.1);
+    }
+    30% {
+        opacity: 0.3;
+        margin-top: 70px;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 0.5;
+        margin-top: 50px;
+        transform: scale(1.2);
+    }
+    100%{
+        opacity: 1;
+        margin-top: 0;
+        transform: scale(1)
+    }
+}

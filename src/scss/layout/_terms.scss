@@ -1,0 +1,27 @@
+// ==================================================================================
+// TERMS SECTION
+// ==================================================================================
+
+#terms {
+    background-color: $light-blue;
+    padding: 50px 0px;
+}
+.terms {
+    article {
+        h2 {
+            margin: 15px 0px;
+        }
+        h3 {
+            margin: 15px 0px;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        strong {
+            font-weight: $font-weight--md;
+        }
+        address {
+            margin-bottom: 20px;
+        }
+    }
+}

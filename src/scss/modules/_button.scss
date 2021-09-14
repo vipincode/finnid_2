@@ -1,0 +1,54 @@
+%btn {
+    display: inline-block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 4px 20px;
+    font-weight: $font-weight--md;
+    font-size: em(14px);
+    text-transform: uppercase;
+    line-height: em(30px, 14px);
+    border-bottom: 3px solid transparent;
+    border-radius: 30px;
+    color: $white;
+    transition: opacity $transition ease-out;
+    &:hover {
+        opacity: 0.85;
+    }
+}
+
+.btn {
+    &--primary {
+        @extend %btn;
+        background: color(primary);
+        border-bottom: 3px solid color(primary, dark);
+    }
+
+    &--secondary {
+        @extend %btn;
+        background: $color--seconary;
+        border-bottom: 3px solid darken($color--seconary, 12%);
+    }
+
+    &--link {
+        color: $color--seconary;
+        padding: 6px 12px;
+        font-weight: $font-weight--lg;
+        background-color: transparent;
+        border-radius: 0;
+        border-bottom: 2px solid $color--seconary;
+    }
+
+    &--white {
+        @extend %btn;
+        background-color: color(primary, x-light);
+        color: color(primary, dark);
+        border-bottom: 3px solid color(primary, light);
+    }
+}
+
+@include mq('md') {
+    .btn + .btn {
+        margin-left: 20px;
+    }    
+}

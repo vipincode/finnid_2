@@ -1,0 +1,132 @@
+// =================================================================
+//  CARDS LAYOUT
+// =================================================================
+
+.card {
+    box-shadow: 0 0 10px rgba($black, 0.07);
+    &-picture {
+        overflow: hidden;
+        img {
+            transition: transform $transition ease-in;
+            transform-origin: 15% 18%;
+            &:hover {
+                transform: scale(1.3);
+            }
+        }
+    }
+    &-article {
+        padding: 0 15px 15px;
+        .btn {
+            margin-top: 30px;
+        }
+    }
+    @extend %transition;
+}
+
+// =================================================================
+//  BLOG CARDS LAYOUT
+// =================================================================
+
+.bcard {
+    position: relative;
+    box-shadow: 0 0 10px rgba($black, 0.07);
+    // Images
+    &-picture {
+        overflow: hidden;
+        img {
+            transform-origin: 0 0;
+            transform: scale(1.1);
+            transition: transform $transition ease-in;
+            &:hover {
+                transform: scale(1);
+            }
+        }
+    }
+    // Card heading
+    &-heading {
+        display: block;
+        color: color(black);
+        font-size: em(17px);
+        line-height: (24px/17px);
+        margin-bottom: em(10px, 17px);
+        font-weight: $font-weight--md;
+        transition: color $transition ease-out;
+        &:hover {
+            color: color(primary);
+        }
+    }
+    // Paragraph
+    p {
+        font-size: em(15px);
+    }
+    // Content[inside bcard]
+    @include e(content) {
+        padding: 15px;
+        span {
+            display: block;
+            font-size: em(15px);
+            margin-bottom: em(12px, 15px);
+            font-weight: $font-weight--sm;
+            color: color(primary);
+        }
+        // Readmore buttons
+        .btn--blogs {
+            display: inline-block;
+            color: color(primary);
+            font-size: em(15px);
+            font-weight: $font-weight--sm;
+            padding: 14px 0px;
+            position: relative;
+            @include p-el('after', 30px, 2px) {
+                background-color: $color--seconary;
+                left: 0;
+                margin-top: 6px;
+                transition: width $transition ease-in-out;
+            }
+            &:hover:after {
+                width: 70px;
+            } 
+        }
+        // Date, Views 
+        @include m('views') {
+            @include flexy();
+            a {
+                margin-right: 15px;
+                font-size: em(13px);
+                transition: color $transition ease-in-out;
+                &:hover {
+                    color: $color--seconary;
+                }
+            }
+            span {
+                font-size: em(13px);
+                transition: color $transition ease-in-out;
+                &:hover {
+                    color: $color--seconary;
+                }
+            }
+        }
+    }
+    // News Tags
+    .tag {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: $white;
+        border-radius: $br-radius;
+        @include m(blue) {
+            background-color: color(primary);
+        }
+        @include m(orange) {
+            background-color: $color--seconary;
+        }
+        span {
+            display: block;
+            font-size: em(12px);
+            text-transform: uppercase;
+            line-height: (21px/12px);
+            padding: 0px 8px;
+        }
+    }
+    @extend %transition;
+}

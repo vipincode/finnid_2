@@ -1,0 +1,33 @@
+// ==========================================================================
+//               BACK TO TOP
+// ==========================================================================
+
+#back-to-top {
+    cursor: pointer;
+    background: color(primary);
+    border: 1px solid $white;
+    width: 50px;
+    height: 50px;
+    border-radius: $br-roundy;
+    text-align: center;
+    color: $white;
+    position: fixed;
+    right: 32px;
+    bottom: 80px;
+    z-index: 11;
+    display: none;
+    transition: background-color $transition ease-in-out;
+    span {
+        font-size: em(13px);
+        font-weight: $font-weight--md;
+        text-transform: capitalize;
+        line-height: em(12px, 13px);
+        display: block;
+        &:first-child {
+            margin-top: 8px;
+        }
+    }
+    &:hover {
+        background-color: $color--seconary;
+    }
+}
