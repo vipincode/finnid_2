@@ -3,6 +3,10 @@
 // =======================================================================
 
 .acc {
+    h3 {
+        font-size: em(17px);
+        font-weight: $font-weight--md;
+    }
     @include e('panel') {
         @include m('content') {
             h2 {
@@ -21,6 +25,10 @@
             }
             p {
                 margin-bottom: 12px;
+            }
+            h3 {
+                font-size: em(17px);
+                font-weight: $font-weight--md;
             }
         }
     }
@@ -63,7 +71,7 @@
         animation-fill-mode: both;
         p {
             &:first-child {
-                font-size: em(15px);
+                font-size: em(17px);
                 font-weight: $font-weight--md;
             }
         }

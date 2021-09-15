@@ -48,10 +48,10 @@
             border-collapse: collapse;
             th {
                 text-align: left;
-                font-size: em(13px);
+                font-size: em(15px);
             }
             td {
-                font-size: em(14px);
+                font-size: em(15px);
             }
             th, td {
                 border: 1px solid color(grey, x-light);
@@ -69,7 +69,10 @@
         }
     }
     @include e('form') {
-        padding-left: 20px;
+        padding: 15px;
+        background: color(primary, light);
+        border-radius: $br-radius;
+        color: $white;
         .align-center {
             align-items: center;
         }
@@ -81,7 +84,8 @@
                 padding-left: 2px;
                 position: relative;
                 font-size: 23px;
-                font-weight: $font-weight--sm;
+                font-weight: $font-weight--lg;
+                z-index: 2;
                 @include p-el('after', 84px, 8px) {
                     top: 20px;
                     background-color: lighten($color: $color--seconary, $amount: 15%);
@@ -92,6 +96,7 @@
 
         p {
             margin-top: 20px;
+            font-weight: $font-weight--sm;
         }
        form {
         .btn {
