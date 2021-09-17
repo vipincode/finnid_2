@@ -65,6 +65,40 @@
             }
         }
     }
+
+    .nd {
+        @include e('registration') {
+            display: none;
+        }
+        @include e('software') {
+            display: none;
+        }
+        @include e('compliance') {
+            display: none;
+        }
+        @include e('producer') {
+            display: none;
+        }
+        &--active {
+            display: block;
+        }
+    }
+
+    @include e('table') {
+        @extend %top-80;
+        text-align: center;
+        @include m('list') {
+            @extend %top-30;
+        }
+
+        .pretty {
+            @include mq('xs') {
+                text-align: left;
+                width: 100%;
+                margin: 12px 0px;
+            }
+        }
+    }
 }
 
 // ============================================================================

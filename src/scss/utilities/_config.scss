@@ -1,6 +1,7 @@
 // Google Fonts
 $font-google-Sans    : 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800';
 $font-stack--primary : 'Open Sans', sans-serif;
+
 // Font Weght
 $font-weight--xs     : 300;
 $font-weight--sm     : 400;
@@ -64,6 +65,12 @@ $colors     : (
 		light     : lighten($color--primary, 25%),
 		base      : $color--primary,
 		dark      : darken($color--primary, 6%),
+	),
+	secondary: (
+		x-light   : lighten($color--seconary, 45%),
+		light     : lighten($color--seconary, 25%),
+		base      : $color--seconary,
+		dark      : darken($color--seconary, 6%),
 	)
 );
 

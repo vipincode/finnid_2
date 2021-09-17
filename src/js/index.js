@@ -325,23 +325,80 @@ function _removePlusMisun() {
 }
 
 // ============================================================
-// HORIZONTAL MENU TABS
+// HORIZONTAL MENU TABS[PRICE TAB- RENTAL, ANNUAL]
 // ============================================================
-const tabs = document.querySelector(".tbs");
+const tabs1 = document.querySelector(".nd__registration");
+const tabs2 = document.querySelector(".nd__software");
+const tabs3 = document.querySelector(".nd__compliance");
+const tabs4 = document.querySelector(".nd__producer");
 const tabsButton = document.querySelectorAll(".tbs__button button");
-const tabsPanel = document.querySelectorAll(".tbs__panel--item");
+const tabsPanel1 = document.querySelectorAll(".nd__registration .tbs__panel--item");
+const tabsPanel2 = document.querySelectorAll(".nd__software .tbs__panel--item");
+const tabsPanel3 = document.querySelectorAll(".nd__compliance .tbs__panel--item");
+const tabsPanel4 = document.querySelectorAll(".nd__producer .tbs__panel--item");
 
-if(tabs) {
-    tabs.addEventListener('click', (e)=> {
+if(tabs1) {
+    tabs1.addEventListener('click', (e)=> {
         if(e.target.className == 'hr__tab') {
             _removeButtonActive();
             e.target.classList.toggle('br-active');
             let btnAttr = e.target.getAttribute("attr");
-            for(let i = 0; i < tabsPanel.length; i++) {
-               if(tabsPanel[i].id === btnAttr) {
-                    tabsPanel[i].classList.add('tbs--active');
+            for(let i = 0; i < tabsPanel1.length; i++) {
+               if(tabsPanel1[i].id === btnAttr) {
+                    tabsPanel1[i].classList.add('tbs--active');
                } else {
-                    tabsPanel[i].classList.remove('tbs--active');
+                    tabsPanel1[i].classList.remove('tbs--active');
+               }
+            }
+        }
+    })
+}
+
+if(tabs2) {
+    tabs2.addEventListener('click', (e)=> {
+        if(e.target.className == 'hr__tab--1') {
+            _removeButtonActive();
+            e.target.classList.toggle('br-active');
+            let btnAttr = e.target.getAttribute("attr");
+            for(let i = 0; i < tabsPanel2.length; i++) {
+               if(tabsPanel2[i].id === btnAttr) {
+                    tabsPanel2[i].classList.add('tbs--active');
+               } else {
+                    tabsPanel2[i].classList.remove('tbs--active');
+               }
+            }
+        }
+    })
+}
+
+if(tabs3) {
+    tabs3.addEventListener('click', (e)=> {
+        if(e.target.className == 'hr__tab--2') {
+            _removeButtonActive();
+            e.target.classList.toggle('br-active');
+            let btnAttr = e.target.getAttribute("attr");
+            for(let i = 0; i < tabsPanel3.length; i++) {
+               if(tabsPanel3[i].id === btnAttr) {
+                    tabsPanel3[i].classList.add('tbs--active');
+               } else {
+                    tabsPanel3[i].classList.remove('tbs--active');
+               }
+            }
+        }
+    })
+}
+
+if(tabs4) {
+    tabs4.addEventListener('click', (e)=> {
+        if(e.target.className == 'hr__tab--3') {
+            _removeButtonActive();
+            e.target.classList.toggle('br-active');
+            let btnAttr = e.target.getAttribute("attr");
+            for(let i = 0; i < tabsPanel4.length; i++) {
+               if(tabsPanel4[i].id === btnAttr) {
+                    tabsPanel4[i].classList.add('tbs--active');
+               } else {
+                    tabsPanel4[i].classList.remove('tbs--active');
                }
             }
         }
@@ -355,21 +412,76 @@ function _removeButtonActive() {
 }
 
 // ============================================================
-// HORIZONTAL INNER MENU TABS
+// HORIZONTAL INNER MENU TABS [PRICE TAB]
 // ============================================================
 const innerTabButton = document.querySelectorAll(".inner_tab");
-const innerTabPannel = document.querySelectorAll(".tbs__panel--inner");
-if(tabs) {
-    tabs.addEventListener('click', (e)=> {
+const innerTabPanel1 = document.querySelectorAll(".nd__registration .tbs__panel--inner");
+const innerTabPanel2 = document.querySelectorAll(".nd__software .tbs__panel--inner");
+const innerTabPanel3 = document.querySelectorAll(".nd__compliance .tbs__panel--inner");
+const innerTabPanel4 = document.querySelectorAll(".nd__producer .tbs__panel--inner");
+
+if(tabs1) {
+    tabs1.addEventListener('click', (e)=> {
         if(e.target.className == 'inner_tab') {
             _removeInnerActiveButton();
             e.target.classList.toggle('inn-active');
             let innerBtnAttr = e.target.getAttribute("attr");
-            for(let i = 0; i < innerTabPannel.length; i++) {
-                if(innerTabPannel[i].id === innerBtnAttr) {
-                     innerTabPannel[i].classList.add('tbs-inner--active');
+            for(let i = 0; i < innerTabPanel1.length; i++) {
+                if(innerTabPanel1[i].id === innerBtnAttr) {
+                     innerTabPanel1[i].classList.add('tbs-inner--active');
                 } else {
-                     innerTabPannel[i].classList.remove('tbs-inner--active');
+                     innerTabPanel1[i].classList.remove('tbs-inner--active');
+                }
+             }
+        }
+    })
+}
+
+if(tabs2) {
+    tabs2.addEventListener('click', (e)=> {
+        if(e.target.className == 'inner_tab') {
+            _removeInnerActiveButton();
+            e.target.classList.toggle('inn-active');
+            let innerBtnAttr = e.target.getAttribute("attr");
+            for(let i = 0; i < innerTabPanel2.length; i++) {
+                if(innerTabPanel2[i].id === innerBtnAttr) {
+                     innerTabPanel2[i].classList.add('tbs-inner--active');
+                } else {
+                     innerTabPanel2[i].classList.remove('tbs-inner--active');
+                }
+             }
+        }
+    })
+}
+
+if(tabs3) {
+    tabs3.addEventListener('click', (e)=> {
+        if(e.target.className == 'inner_tab') {
+            _removeInnerActiveButton();
+            e.target.classList.toggle('inn-active');
+            let innerBtnAttr = e.target.getAttribute("attr");
+            for(let i = 0; i < innerTabPanel3.length; i++) {
+                if(innerTabPanel3[i].id === innerBtnAttr) {
+                     innerTabPanel3[i].classList.add('tbs-inner--active');
+                } else {
+                     innerTabPanel3[i].classList.remove('tbs-inner--active');
+                }
+             }
+        }
+    })
+}
+
+if(tabs4) {
+    tabs4.addEventListener('click', (e)=> {
+        if(e.target.className == 'inner_tab') {
+            _removeInnerActiveButton();
+            e.target.classList.toggle('inn-active');
+            let innerBtnAttr = e.target.getAttribute("attr");
+            for(let i = 0; i < innerTabPanel4.length; i++) {
+                if(innerTabPanel4[i].id === innerBtnAttr) {
+                     innerTabPanel4[i].classList.add('tbs-inner--active');
+                } else {
+                     innerTabPanel4[i].classList.remove('tbs-inner--active');
                 }
              }
         }
@@ -380,6 +492,81 @@ function _removeInnerActiveButton() {
     for(let i = 0; i < innerTabButton.length; i++) {
         innerTabButton[i].classList.remove('inn-active');
     }
+}
+
+// ============================================================
+// PRICING TABLE TAB
+// ============================================================
+
+var registration =  $('.nd__registration');
+var software =  $('.nd__software');
+var compliance =  $('.nd__compliance');
+var producer =  $('.nd__producer');
+
+registration.addClass('nd--active');
+
+$('.pricing__table').on('click', function(e) {
+    if(e.target.tagName==="INPUT") {
+        if(e.target.checked === true) {
+            $('input:checkbox').prop('checked', false);  
+            e.target.checked = true 
+        } else {
+           e.target.checked = true 
+        }
+        _removeActiveClass();
+
+        if(e.target.id === registration.attr('class')) {
+            registration.addClass('nd--active');
+            $('.tbs__button button').removeClass('br-active')
+            $('.tbs__button button:first-child').addClass('br-active')
+
+            $('.tbs__panel--item').removeClass('tbs--active')
+            $('.tbs__panel--item:first-child').addClass('tbs--active')
+
+            $('.inner_tab').removeClass('inn-active')
+            $('.inner_tab:first-child').addClass('inn-active')
+
+        } else if(e.target.id === software.attr('class')) {
+            software.addClass('nd--active');
+            $('.tbs__button button').removeClass('br-active')
+            $('.tbs__button button:first-child').addClass('br-active')
+
+            $('.tbs__panel--item').removeClass('tbs--active')
+            $('.tbs__panel--item:first-child').addClass('tbs--active')
+
+            $('.inner_tab').removeClass('inn-active')
+            $('.inner_tab:first-child').addClass('inn-active')
+
+        } else if(e.target.id === compliance.attr('class')) {
+            compliance.addClass('nd--active');
+            $('.tbs__button button').removeClass('br-active')
+            $('.tbs__button button:first-child').addClass('br-active')
+
+            $('.tbs__panel--item').removeClass('tbs--active')
+            $('.tbs__panel--item:first-child').addClass('tbs--active')
+
+            $('.inner_tab').removeClass('inn-active')
+            $('.inner_tab:first-child').addClass('inn-active')
+
+        } else if(e.target.id === producer.attr('class')) {
+            producer.addClass('nd--active');
+            $('.tbs__button button').removeClass('br-active')
+            $('.tbs__button button:first-child').addClass('br-active')
+
+            $('.tbs__panel--item').removeClass('tbs--active')
+            $('.tbs__panel--item:first-child').addClass('tbs--active')
+
+            $('.inner_tab').removeClass('inn-active')
+            $('.inner_tab:first-child').addClass('inn-active')
+        }
+    }
+});
+
+function _removeActiveClass() {
+    registration.removeClass('nd--active');
+    software.removeClass('nd--active');
+    compliance.removeClass('nd--active');
+    producer.removeClass('nd--active');
 }
 
 // ============================================================
@@ -398,4 +585,4 @@ function _removeInnerActiveButton() {
 
 $('#radio-manager').change((e) => {
     $('#to-change strong').text(`${e.target.value}`)
-  })
+})

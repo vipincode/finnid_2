@@ -38,6 +38,7 @@
     "jquery-sticky": "^1.0.4",
     "lightbox2": "^2.11.3",
     "lity": "^2.4.1",
+    "pretty-checkbox": "^3.0.3",
     "readmore-js": "^2.2.1",
     "swiper": "^6.5.7",
     "vide": "^0.5.1",
