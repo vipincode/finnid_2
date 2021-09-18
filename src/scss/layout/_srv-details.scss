@@ -120,6 +120,25 @@
             border-radius: $br-radius;
        }
     }
+    @include e('visited') {
+        @extend %top-30;
+        ul {
+            margin-top: 12px;
+            a {
+                font-size: em(14px);
+                font-weight: $font-weight--sm;
+                padding: 6px 19px;
+                margin-top: 12px;
+                display: block;
+                border-radius: $br-radius;
+                background-color: color(secondary);
+                color: $white;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
 }
 
 .srv-contact {
